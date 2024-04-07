@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(243, 236, 227);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(54, 148, 172);
+    padding: 5px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.navbar h2{
+    margin-bottom: 30px;
+}
+.navbar input[type = "search"]{
+    width: 810px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+}
+.navbar ul{
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 5px;
+}
+
+.navbar li , .quali li{
+    list-style: none;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    width: 40%;
+    /* border: 2px solid black; */
+}
+
+#post img {
+    width: 20rem;
+    height: auto;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.self-content{
+    margin-left: 30px;
+}
+
+.self-content li{
+    margin-bottom: 10px;
+}
+
+.right{
+    width: 60%;
+    background-color: white;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.user-img img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+.user-info{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1.2rem;
+}
+.calender img{
+    margin-left: 34rem;
+}
+
+.right-footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 15px;
+}
+#comment-icon {
+    margin-right: 5px;
+}
+#comments {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#comment-input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+    border: 1px solid #ddd;
+}
+
+#comment-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}

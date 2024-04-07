@@ -1,0 +1,60 @@
+body{
+    background-color: #FFE4C4 ;
+    font-family: sans-serif;
+}
+
+.card{
+    min-width: 128px;
+    max-width: 256px;
+    min-height: 128px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    background-color: rgb(255, 250, 250);
+}
+
+.img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-content{
+    padding: 0 16px 16px 16px;
+}
+
+.card-content h2{
+    font-weight: 12px;
+    opacity: 50%;
+}
+
+.card-content h1{
+    font-weight: 21px;
+    margin-bottom: 24px;
+}
+
+.card-content p {
+    opacity: 60%;
+    font-weight: 14.4px;
+}
+
+.card-footer a{
+    text-decoration: none;
+    color: rgb(109, 109, 235);
+}
+.card-footer a small{ 
+    color: black;
+}
+
+.card-footer a:visited{
+    color: rgb(109, 109, 235);
+}
+
+.card-footer{
+    font-size: 12.8px;
+    padding-left : 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

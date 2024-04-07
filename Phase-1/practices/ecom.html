@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #cart {
+            font-size: 1.5em;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        .cart-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h1>E-Commerce Website</h1>
+
+<div id="cart"></div>
+
+<div id="products"></div>
+
+<script>
+    const cart = [];
+    const apiUrl = 'https://jsonplaceholder.typicode.com/photos';
+
+    function fetchProducts() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(products => displayProducts(products))
+            .catch(error => console.error('Error fetching product data:', error));
+    }
+
+    function displayProducts(products) {
+        const productsContainer = document.getElementById('products');
+
+        products.slice(0, 5).forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productElement.innerHTML = `
+                <img src="${product.url}" alt="${product.title}" style="width: 100%;">
+                <p>${product.title}</p>
+                <button onclick="addToCart(${product.id})">Add to Cart</button>
+            `;
+            productsContainer.appendChild(productElement);
+        });
+    }
+
+    function addToCart(productId) {
+        const productToAdd = cart.find(item => item.id === productId);
+
+        if (productToAdd) {
+            productToAdd.quantity += 1;
+        } else {
+            cart.push({ id: productId, quantity: 1 });
+        }
+
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartContainer = document.getElementById('cart');
+        cartContainer.innerHTML = '<h2>Shopping Cart</h2>';
+
+        cart.forEach(item => {
+            const productInCart = document.createElement('div');
+            productInCart.classList.add('cart-item');
+            productInCart.innerHTML = `
+                <p>Product ID: ${item.id}</p>
+                <p>Quantity: ${item.quantity}</p>
+            `;
+            cartContainer.appendChild(productInCart);
+        });
+    }
+
+    // Fetch products and display on page load
+    fetchProducts();
+</script>
+
+</body>
+</html>

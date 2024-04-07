@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkeDin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h2>Logo</h2>
+      <input type="search" placeholder="Search" />
+      <ul>
+        <li>Home</li>
+        <li>My Networ</li>
+        <li>Jobs</li>
+        <li>Notifications</li>
+        <li>Settings</li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="left">
+        <div id="post">
+          <img src="https://placekitten.com/300/200" alt="Post Image" />
+
+          <div class="self-content">
+            <h2>Professional Skills</h2>
+            <ul>
+              <li>Software Development</li>
+              <li>Cloud Technology</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+            </ul>
+            <h2>Qualifications</h2>
+            <ul class="quali">
+              <li>Bachelor's Degree in IT</li>
+              <li>Certification in Cloud Computing</li>
+              <li>Certification in Software Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="user-info">
+          <div class="user-img">
+            <img src="png-transparent-circle-silhouette-logo-user-user-profile-green-facial-expression-nose-cartoon.png" alt="user" />
+          </div>
+          <div class="user-data">
+            <h5>Mitesh R. Vaghela</h5>
+            <p>2 min ago</p>
+          </div>
+          <div class="calender">
+            <img
+              src="https://cdn.hugeicons.com/icons/keyboard-stroke-rounded.svg"
+              alt="keyboard"
+              width="24"
+              height="24"
+            />
+          </div>
+        </div>
+        <hr />
+        <div class="para">
+          <p>
+            🚀 Exciting News! Our team just wrapped up an intensive
+            brainstorming session, and we're thrilled to unveil our latest
+            project: Collaborate. 💡<br /><br />
+
+            🌟 collaborateIT is set to revolutionize. Our dedicated team poured
+            their hearts and souls into crafting this innovative solution, and
+            we can't wait to share it with the world. 🌍<br /><br />
+
+            🔍 Stay tuned for updates as we gear up for the official launch. In
+            the meantime, feel free to reach out if you're curious to learn more
+            about how collaborateIT can transform your experience. Let's embark
+            on this journey together! 🚀
+          </p>
+        </div>
+        <hr />
+        <div class="right-footer">
+          <div class="like-content">
+            <button onclick="toggleLike()">
+              <span id="like-icon">👍</span>
+              <span id="likes-count">0</span>
+            </button>
+          </div>
+          <div class="comment-content">
+            <button onclick="toggleComment()">
+                <span id="comment-icon">💬</span>
+                <span id="comment">comment</span>
+            </button>
+          </div>
+          <div class="share-content">
+        <button onclick="sharePost()">
+            <span id="share-icon">🔗</span>
+            <span id="share">share</span>
+            </button>
+          </div>
+          <div class="share-count">
+            <span id="share-number">0</span>
+            <span id="share">shares</span>
+          </div>
+        </div>
+          <div id="comments" style="display: none;">
+            <div id="comment-list"></div>
+            <input type="text" id="comment-input" placeholder="Add a comment...">
+            <button id="comment-button" onclick="addComment()">Post</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let isLiked = false;
+      let likesCount = 0;
+
+      function toggleLike() {
+        isLiked = !isLiked;
+        likesCount = isLiked ? likesCount + 1 : likesCount - 1;
+        updateLikeUI();
+      }
+      function updateLikeUI() {
+        const likeIcon = document.getElementById('like-icon');
+        const likesCountElement = document.getElementById('likes-count');
+
+        likesCountElement.textContent = likesCount;
+    }
+
+    function toggleComment() {
+        const commentsContainer = document.getElementById('comments');
+        commentsContainer.style.display = commentsContainer.style.display === 'none' ? 'block' : 'none';
+    }
+
+    let shares = 0;
+    function sharePost() {
+        alert('Post shared!');
+        shares++;
+        const commentCount = document.querySelector("#share-number");
+        commentCount.innerText =shares;
+    }
+
+    function addComment() {
+        const commentInput = document.getElementById('comment-input');
+        const commentText = commentInput.value.trim();
+
+        if (commentText) {
+            const commentList = document.getElementById('comment-list');
+            const commentDiv = document.createElement('div');
+            commentDiv.textContent = commentText;
+            commentList.appendChild(commentDiv);
+
+            // Clear the input field
+            commentInput.value = '';
+        }
+    }
+    </script>
+  </body>
+</html>

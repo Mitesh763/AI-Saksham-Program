@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <h1>array</h1>
+    <script>
+      var array = [1, 2, 3, 4, 5, 2, 1, 6];
+      // 1. Sum of Array Elements:
+      // Write a function to calculate the sum of all elements in an array.
+      // function calculateSum(array) {
+      //   let s = 0;
+      //   for (let i = 0; array.length; i++) {
+      //     s += array[i];
+      //   }
+      //   return s;
+      // }
+      // console.log("Sum of array", calculateSum(array));
+
+      // 2. Find Maximum Element:
+      // Create a function to find the maximum element in an array.
+      // function maximumArr(array) {
+      //   let max = array[0];
+      //   for (let i = 0; i < array.length; i++) {
+      //     if (array[i] > max) {
+      //       max = array[i];
+      //     }
+      //   }
+      //   return max;
+      // }
+      // console.log(" Max number in array:" + maximumArr(array));
+
+      // 3. Filter Even Numbers:
+      // Write a function that takes an array of numbers and returns a new array containing only the even numbers.
+      // function evenNum(array) {
+      //   var arr = [];
+      //   for (let i = 0; i < array.length; i++) {
+      //     if (array[i] % 2 == 0) {
+      //       arr[i] = array[i];
+      //     }
+      //   }
+      //   return arr;
+      // }
+      // console.log("Even Number Array : " + evenNum(array))
+
+      // 4. Reverse Array:
+      // Implement a function to reverse the order of elements in an array.
+      function reverseArray(array){
+        let length = array.length;
+        for (let i = 0; i < length/2; i++) {
+           let temp = array[i];
+           array[i] = array[length-1]
+           array[length-1] = temp; 
+        } 
+        return Array
+      }
+      console.log(reverseArray(array));
+    </script>
+  </body>
+</html>

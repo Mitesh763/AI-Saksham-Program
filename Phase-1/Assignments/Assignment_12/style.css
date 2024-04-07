@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+li{ 
+    list-style: none;
+}
+.navbar li a{
+    text-decoration: none;
+    color: black;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.img img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 10px solid black;
+    border-radius: 50%;
+}

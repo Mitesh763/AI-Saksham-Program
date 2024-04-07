@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram-like Post</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fafafa;
+        }
+
+        #post {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #post img {
+            width: 100%;
+            height: auto;
+        }
+
+        #post-actions {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #post-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+
+        #post-actions button:hover {
+            color: #333;
+        }
+
+        #like-icon {
+            margin-right: 5px;
+        }
+
+        #comment-icon {
+            margin-right: 5px;
+        }
+
+        #share-icon {
+            margin-right: 5px;
+        }
+
+        #likes-count {
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        #comments {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        #comment-input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        #comment-button {
+            width: 100%;
+            padding: 8px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-top: 1px solid #ddd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="post">
+    <img src="https://placekitten.com/300/200" alt="Post Image">
+    
+    <div id="post-actions">
+        <button onclick="toggleLike()">
+            <span id="like-icon">❤️</span>
+            <span id="likes-count">0</span>
+        </button>
+        <button onclick="toggleComment()">
+            <span id="comment-icon">💬</span>
+        </button>
+        <button onclick="sharePost()">
+            <span id="share-icon">🔗</span>
+        </button>
+    </div>
+
+    <div id="comments" style="display: none;">
+        <div id="comment-list"></div>
+        <input type="text" id="comment-input" placeholder="Add a comment...">
+        <button id="comment-button" onclick="addComment()">Post</button>
+    </div>
+</div>
+
+<script>
+    let isLiked = false;
+    let likesCount = 0;
+
+    function toggleLike() {
+        isLiked = !isLiked;
+        likesCount = isLiked ? likesCount + 1 : likesCount - 1;
+        updateLikeUI();
+    }
+
+    function updateLikeUI() {
+        const likeIcon = document.getElementById('like-icon');
+        const likesCountElement = document.getElementById('likes-count');
+
+        likeIcon.textContent = isLiked ? '❤️' : '🤍';
+        likesCountElement.textContent = likesCount;
+    }
+
+    function toggleComment() {
+        const commentsContainer = document.getElementById('comments');
+        commentsContainer.style.display = commentsContainer.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function sharePost() {
+        alert('Post shared!');
+    }
+
+    function addComment() {
+        const commentInput = document.getElementById('comment-input');
+        const commentText = commentInput.value.trim();
+
+        if (commentText) {
+            const commentList = document.getElementById('comment-list');
+            const commentDiv = document.createElement('div');
+            commentDiv.textContent = commentText;
+            commentList.appendChild(commentDiv);
+
+            // Clear the input field
+            commentInput.value = '';
+        }
+    }
+</script>
+
+</body>
+</html>

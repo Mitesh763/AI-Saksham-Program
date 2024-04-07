@@ -1,0 +1,36 @@
+.menu{
+    margin: 1rem;
+    padding: 4px;
+}
+.dot{
+    width: 1rem;
+    height: 1rem;
+    margin-bottom: 4px;
+    color: #424242;
+    border:  2px solid black;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.square{
+    background-color: black;
+    width: 1rem;
+    height: 1rem;
+    color: #424242;
+    margin-bottom: 4px;
+    border:  2px solid black;
+}
+
+.rect{
+    width: 2.5rem;
+    height: 0.5rem;
+    color: #424242;
+    margin-bottom: 4px;
+    border:  2px solid black;
+    background-color: black;
+}
+
+
+.dot:hover , .square:hover ,  .rect:hover{
+  background-color: rgba(68, 240, 76, 0.4);
+}
